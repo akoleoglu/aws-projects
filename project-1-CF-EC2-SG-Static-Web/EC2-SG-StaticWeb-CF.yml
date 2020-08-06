@@ -45,10 +45,10 @@ Resources:
           yum install httpd -y
           chmod -R 777 /var/www/html
           cd /var/www/html
-          wget https://raw.githubusercontent.com/akoleoglu/CF-Ec2-SG-StaticWeb/master/static-web/cat0.jpg
-          wget https://raw.githubusercontent.com/akoleoglu/CF-Ec2-SG-StaticWeb/master/static-web/cat1.jpg
-          wget https://raw.githubusercontent.com/akoleoglu/CF-Ec2-SG-StaticWeb/master/static-web/cat2.jpg
-          wget https://raw.githubusercontent.com/akoleoglu/CF-Ec2-SG-StaticWeb/master/static-web/index.html
+          wget https://raw.githubusercontent.com/akoleoglu/aws-projects/master/project-1-CF-EC2-SG-Static-Web/static-web/cat0.jpg
+          wget https://raw.githubusercontent.com/akoleoglu/aws-projects/master/project-1-CF-EC2-SG-Static-Web/static-web/cat1.jpg
+          wget https://raw.githubusercontent.com/akoleoglu/aws-projects/master/project-1-CF-EC2-SG-Static-Web/static-web/cat2.jpg
+          wget https://raw.githubusercontent.com/akoleoglu/aws-projects/master/project-1-CF-EC2-SG-Static-Web/static-web/index.html
           systemctl start httpd
           systemctl enable httpd
            
