@@ -38,7 +38,7 @@ Resources:
               pip3 install flask_mysql
               echo "${MyDBURI}" > /home/ec2-user/dbserver.endpoint
               FOLDER="https://raw.githubusercontent.com/akoleoglu/aws-projects/master/103-to-do-web-api-ec2-rds/"
-              curl -s --create-dirs -o "/home/ec2-user/app.py" -L "$FOLDER"/todo-app.py
+              curl -s --create-dirs -o "/home/ec2-user/app.py" -L "$FOLDER"/todo-api.py
               python3 /home/ec2-user/app.py
             - MyDBURI: !GetAtt MyDatabaseServer.Endpoint.Address
 

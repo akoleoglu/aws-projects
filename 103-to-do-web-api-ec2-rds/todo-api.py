@@ -3,8 +3,8 @@ from flask import Flask, jsonify, abort, request, make_response
 from flaskext.mysql import MySQL
 
 # Create an object named app
-app = Flask(__name__)
 
+app = Flask(__name__)
 # Get the db url from the file
 db_endpoint = open("/home/ec2-user/dbserver.endpoint", 'r', encoding='UTF-8') 
 
