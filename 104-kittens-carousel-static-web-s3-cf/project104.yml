@@ -1,0 +1,107 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: |
+  Kittens Carousel is a static website application deployed on 
+  AWS Simple Storage Service (S3), served through Cloudfront 
+  and Route 53 using AWS Cloudformation Service.
+Parameters:
+  HostedZone:
+    Description: 
+    Type: AWS::Route53::HostedZone::Id
+    Default:      
+Resources:
+  HostedZone:
+    Type: "AWS::Route53::HostedZone"
+    Properties:
+      HostedZoneConfig:
+        HostedZoneConfig
+      HostedZoneTags:
+        - HostedZoneTag
+      Name: String #required
+      QueryLoggingConfig:
+        QueryLoggingConfig
+      VPCs:
+        - VPC
+  route53RS:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      Name: 
+      Comment: 
+      Type: A | AAAA | CNAME | MX | NS | PTR | SOA | SPF | SRV | TXT
+      TTL: 
+      AliasTarget: 
+      Failover: 
+      GeoLocation: 
+      HealthCheckId: 
+      HostedZoneId: 
+      HostedZoneName: 
+      Region: 
+      ResourceRecords: 
+      - record
+      SetIdentifier: 
+      Weight: 
+  cloudfrontDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+          Aliases: 
+            - kitten.desert18.com
+          CacheBehaviors: 
+            - CacheBehavior
+          CustomErrorResponses: 
+            - CustomErrorResponse
+          DefaultCacheBehavior: 
+            DefaultCacheBehavior
+          DefaultRootObject: String
+          Enabled: Boolean
+          HttpVersion: String
+          IPV6Enabled: Boolean
+          Logging: 
+            Logging
+          OriginGroups: 
+            OriginGroups
+          Origins: 
+            - Origin
+          PriceClass: String
+          Restrictions: 
+            Restrictions
+          ViewerCertificate: 
+            ViewerCertificate
+          WebACLId: String
+
+      Tags:
+        - Key: key
+          Value: value
+  s3Bucket:
+    Type: AWS::S3::Bucket
+    Properties: 
+      AccessControl: Private | PublicRead | PublicReadWrite | AuthenticatedRead | LogDeliveryWrite | BucketOwnerRead | BucketOwnerFullControl
+      BucketName: 
+      CorsConfiguration: 
+      LifecycleConfiguration: 
+      NotificationConfiguration: 
+      VersioningConfiguration: 
+      WebsiteConfiguration: 
+      Tags:
+        - Key: key
+          Value: value
+  KittensCertificate:
+    Type: "AWS::CertificateManager::Certificate"
+    Properties:
+      CertificateTransparencyLoggingPreference: DISABLED
+      DomainName: !Ref KittensDomainName #required
+      ValidationMethod: DNS
+      DomainValidationOptions:
+        - DomainName: !Ref KittensDomainName
+          HostedZoneId: !Ref DomainName
+Outputs:
+  BucketName:
+    Description: 'S3 Bucket Name'
+    Value: !Ref S3Bucket
+  DistributionId:
+    Description: 'CloudFront Distribution ID'
+    Value: !Ref CloudFrontDistribution
+  Domain:
+    Description: 'Cloudfront Domain'
+    Value: !GetAtt CloudFrontDistribution.DomainName
+
+  
