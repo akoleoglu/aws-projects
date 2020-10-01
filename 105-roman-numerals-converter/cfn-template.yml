@@ -32,7 +32,7 @@ Resources:
           yum update -y
           yum install python3 -y
           pip3 install flask
-          mkdir /home/user-ec2/templates && cd /home/user-ec2/templates
+          mkdir /home/ec2-user/templates && cd /home/ec2-user/templates
           wget https://raw.githubusercontent.com/akoleoglu/aws-projects/master/105-roman-numerals-converter/templates/index.html >> /home/ec2-user/index.html
           wget https://raw.githubusercontent.com/akoleoglu/aws-projects/master/105-roman-numerals-converter/templates/result.html
           cd ..
