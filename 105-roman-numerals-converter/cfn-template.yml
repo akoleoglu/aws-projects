@@ -23,7 +23,6 @@ Resources:
       InstanceType: t2.micro
       SecurityGroupIds:
         - !Ref WebServerSG
-      KeyName: !Ref KeyName
       Tags:
           - Key: Name
             Value: Web Server of Roman Numerals App 
