@@ -34,11 +34,10 @@ Resources:
           pip3 install flask
           mkdir /home/ec2-user/templates
           cd /home/ec2-user/templates
-          wget https://raw.githubusercontent.com/akoleoglu/aws-projects/master/105-roman-numerals-converter/templates/index.html >> /home/ec2-user/index.html
-          wget https://raw.githubusercontent.com/akoleoglu/aws-projects/master/105-roman-numerals-converter/templates/result.html >> /home/ec2-user/result.html
+          wget https://raw.githubusercontent.com/akoleoglu/aws-projects/master/105-roman-numerals-converter/templates/index.html
+          wget https://raw.githubusercontent.com/akoleoglu/aws-projects/master/105-roman-numerals-converter/templates/result.html
           cd ..
           wget https://raw.githubusercontent.com/akoleoglu/aws-projects/master/105-roman-numerals-converter/app.py
-         
           python3 /home/ec2-user/app.py
 
       Tags:
