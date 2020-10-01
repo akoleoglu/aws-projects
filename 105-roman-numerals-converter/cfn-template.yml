@@ -1,6 +1,7 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: |
   Cloudformation Template for Roman Numerals Application
+
 Resources:
   WebServerSG:
     Type: "AWS::EC2::SecurityGroup"
@@ -22,12 +23,13 @@ Resources:
       InstanceType: t2.micro
       SecurityGroupIds:
         - !Ref WebServerSG
+      KeyName: !Ref KeyName
       Tags:
           - Key: Name
             Value: Web Server of Roman Numerals App 
       UserData: 
-        !Base64 |
-          #! /bin/bash
+        'Fn::Base64': !Sub |
+          #!/bin/bash
           yum update -y
           yum install python3 -y
           pip3 install flask
