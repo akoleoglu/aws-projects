@@ -33,12 +33,12 @@ Resources:
           yum update -y
           yum install python3 -y
           pip3 install flask
-          wget https://raw.githubusercontent.com/akoleoglu/aws-projects/master/105-roman-numerals-converter/templates/index.html 
+          mkdir /home/user-ec2/templates && cd /home/user-ec2/templates
+          wget https://raw.githubusercontent.com/akoleoglu/aws-projects/master/105-roman-numerals-converter/templates/index.html >> /home/ec2-user/index.html
           wget https://raw.githubusercontent.com/akoleoglu/aws-projects/master/105-roman-numerals-converter/templates/result.html
-          wget https://raw.githubusercontent.com/akoleoglu/aws-projects/master/105-roman-numerals-converter/app.py
-          mkdir templates
-          mv index.html templates/
-          mv result.html templates/
+          cd ..
+          get https://raw.githubusercontent.com/akoleoglu/aws-projects/master/105-roman-numerals-converter/app.py
+         
           python3 /home/ec2-user/app.py
 
       Tags:
