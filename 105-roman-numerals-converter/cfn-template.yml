@@ -11,6 +11,10 @@ Resources:
           FromPort: 80
           ToPort: 80
           CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
   WebServer:
     Type: "AWS::EC2::Instance"
     Properties:
@@ -30,6 +34,9 @@ Resources:
           wget https://raw.githubusercontent.com/akoleoglu/aws-projects/master/105-roman-numerals-converter/templates/index.html 
           wget https://raw.githubusercontent.com/akoleoglu/aws-projects/master/105-roman-numerals-converter/templates/result.html
           wget https://raw.githubusercontent.com/akoleoglu/aws-projects/master/105-roman-numerals-converter/app.py
+          mkdir templates
+          mv index.html templates/
+          mv result.html templates/
           python3 /home/ec2-user/app.py
 
       Tags:
