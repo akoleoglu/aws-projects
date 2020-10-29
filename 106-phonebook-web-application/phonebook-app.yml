@@ -135,7 +135,7 @@ Resources:
       DBName: phonebook
       Engine: MySQL
       EngineVersion: 8.0.19
-      MasterUserPassword: Password1@
+      MasterUserPassword: Password1
       MasterUsername: admin
       MonitoringInterval: 0
       MultiAZ: false
