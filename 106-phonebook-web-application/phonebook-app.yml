@@ -65,7 +65,7 @@ Resources:
                 curl -s --create-dirs -o "/home/ec2-user/templates/delete.html" -L "$FOLDER"templates/delete.html
                 curl -s --create-dirs -o "/home/ec2-user/app.py" -L "$FOLDER"phonebook-app.py
                 python3 /home/ec2-user/app.py
-              - MyDBURI: !GetAtt MyDatabaseServer.Endpoint.Addres
+              - MyDBURI: !GetAtt MyDatabaseServer.Endpoint.Address
   WebServerTG:
     Type: AWS::ElasticLoadBalancingV2::TargetGroup
     Properties: 
